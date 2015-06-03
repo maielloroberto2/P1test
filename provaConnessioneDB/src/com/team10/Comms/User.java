@@ -80,7 +80,7 @@ public void Send_Message(String mail, String object, String text)
 
 	// Creo il mySQL insert PreparedStatement
 	PreparedStatement preparedStmt = conn.prepareStatement(query);
-	preparedStmt.setString (2, "mail@mail.com");
+	preparedStmt.setString (2, "email@email.com");
 	preparedStmt.setString (3, mail);
 	preparedStmt.setDate   (4, sendDate);
 	preparedStmt.setBoolean (5, false);
