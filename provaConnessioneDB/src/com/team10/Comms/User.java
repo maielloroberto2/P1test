@@ -70,11 +70,12 @@ public void Send_Message(String mail, String object, String text)
 	java.sql.Date sendDate = new java.sql.Date(calendar.getTime().getTime());
 	
 	//cerca l'utente nel db; se non e' presente, lancia l'errore.
+	//TODO Risolvere la +mail+
 	Statement st = conn.createStatement();
 	ResultSet rs = st.executeQuery("SELECT * FROM users WHERE Mail = '"+mail+"' ");
 	
 	//Se l'utente e' presente, immette una nuova tupla in DATABASE:MESSAGES; quindi invia un messaggio all'utente desiderato.
-
+	
 	String query = " insert into messages (Sender, Receiver, SendingDate, isRead, Object, Text)"
 	+ " values (?, ?, ?, ?, ?, ?)";
 

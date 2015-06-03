@@ -98,7 +98,7 @@ private ProgressDialog myProgress;
 								name= new String( rs.getBytes("NOME"), "UTF-8");
 								surname= new String( rs.getBytes("COGNOME"), "UTF-8");
 							} catch (UnsupportedEncodingException e) {
-								// TODO Auto-generated catch block
+								
 								e.printStackTrace();
 							}
 							
