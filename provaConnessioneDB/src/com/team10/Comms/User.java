@@ -57,11 +57,13 @@ public void Send_Message(String mail, String object, String text)
 {
 
     //Connessione al db e lancio di eccezione in caso di fallimento.
-    Connection conn=null;
+	
+	Connection conn=null;
 	final String user = "b76a43fe274f2a";
 	final String psw = "b1a0a642";
+	
+	try {
 	conn = DatabaseConnect.estabilishConnection(conn,user,psw);
-	if(conn!=null){
 	
     //Crea una SQL date object in modo da usarla nell'INSERT statement
 	Calendar calendar = Calendar.getInstance();
@@ -78,7 +80,7 @@ public void Send_Message(String mail, String object, String text)
 
 	// Creo il mySQL insert PreparedStatement
 	PreparedStatement preparedStmt = conn.prepareStatement(query);
-	preparedStmt.setString (2,);
+	preparedStmt.setString (2, "mail@mail.com");
 	preparedStmt.setString (3, mail);
 	preparedStmt.setDate   (4, sendDate);
 	preparedStmt.setBoolean (5, false);
@@ -93,7 +95,9 @@ public void Send_Message(String mail, String object, String text)
 	// Elimino dalla memoria gli oggetti usati 
     rs=null;
     st=null;
-    }
+    }catch (SQLException ex) {
+        ex.printStackTrace();
+	  }
 }
 	
 	
