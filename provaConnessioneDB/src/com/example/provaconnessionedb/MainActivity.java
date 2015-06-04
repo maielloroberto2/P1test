@@ -15,7 +15,7 @@ import android.app.Activity;
 
 
 
-import java.sql.*;
+//import java.sql.*;
 
 
 public class MainActivity extends Activity implements OnClickListener {
