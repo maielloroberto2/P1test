@@ -1,4 +1,5 @@
-package com.team10.Tracking;
+//package com.team10.Tracking;
+package com.example.knowledgehound;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -36,7 +37,7 @@ public final class GPSTracker implements LocationListener{
 	/**
      * Funzione getLocation che prende la posizione corrente dell'utente
      * Questo metodo tenta prima di prendere le coordinate dal network provider
-     * Se il network provider non Ë abilitato, allora le prender‡ dal GPS provider
+     * Se il network provider non √® abilitato, allora le prender√† dal GPS provider
      */
 	
 	public Location getLocation(){
@@ -55,7 +56,7 @@ public final class GPSTracker implements LocationListener{
             Log.v("isNetworkEnabled", "=" + isNetworkEnabled);
 
             if (isGPSEnabled == false && isNetworkEnabled == false) {
-                //Non sono abilitati nË GPS nË Network Provider
+                //Non sono abilitati n√® GPS n√® Network Provider
             } else {
             	this.canGetLocation = true;
             	 if (isNetworkEnabled){
@@ -74,7 +75,7 @@ public final class GPSTracker implements LocationListener{
                          }
                      }
                  }
-            // Se il GPS Ë abilitato prende lat/long usando GPS Services
+            // Se il GPS √® abilitato prende lat/long usando GPS Services
             	 if (isGPSEnabled) {
                      location=null;
                      if (location == null) {
