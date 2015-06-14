@@ -1,4 +1,4 @@
-package com.team10.Comms;
+package com.example.knowledgehound;
 
 import java.sql.*;
 import com.example.provaconnessionedb.DatabaseConnect;
