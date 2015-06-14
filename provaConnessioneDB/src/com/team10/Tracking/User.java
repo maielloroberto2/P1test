@@ -1,4 +1,5 @@
-package com.team10.Tracking;
+//package com.team10.Tracking;
+package com.example.knowledgehound;
 import java.sql.*;
 import java.util.Calendar;
 import android.app.Activity;
@@ -32,7 +33,7 @@ public class User extends Activity {
 		GPSTracker gps;
 		gps = new GPSTracker(User.this);
 		
-		//Se il GPS è abilitato (ritorna true/false)
+		//Se il GPS Ã¨ abilitato (ritorna true/false)
 		if(gps.canGetLocation()){ //Se canGetLocation == true
 			//Ottiene latitudine e longitudine
 			latitude = gps.getLatitude();
@@ -42,7 +43,7 @@ public class User extends Activity {
             gps.showSettingsAlert();
           } 
 		
-		//Se è stato possibile tracciare l'utente con GPS o Network provider 
+		//Se Ã¨ stato possibile tracciare l'utente con GPS o Network provider 
 		//inserisce in DATABASE:TRACKINGS una nuova tupla contenente latitudine e longitudine
 		//TODO Diversificare nome variabile query.
 			if(latitude != null && longitude != null){
@@ -57,8 +58,8 @@ public class User extends Activity {
 					Toast.makeText(getApplicationContext(), "Impossibile effettuare il Tracking.",
                     Toast.LENGTH_SHORT).show();	
 			    }
-				//Controllo se nel database sono presenti più di 10 tracciamenti;
-				//Se è vero, cancella il tracciamento con la data meno recente;
+				//Controllo se nel database sono presenti piÃ¹ di 10 tracciamenti;
+				//Se Ã¨ vero, cancella il tracciamento con la data meno recente;
 			
 				//Stringa per operazione di select sul database
 				String query1 = ("select count(*) from trackings where User = '"+mail+"' ");
